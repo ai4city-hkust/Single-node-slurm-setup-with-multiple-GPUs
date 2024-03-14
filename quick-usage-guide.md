@@ -6,6 +6,8 @@ Slurm commands could be confusing at first. If you check [slurm documentation](h
 ## Troubleshooting commands
 These are useful when `sinfo` does not work or respond.
 
+`sinfo -R` shows debug information.
+
 This command debugs the slurm controller.
 ```
 sudo slurmctld -D
@@ -28,6 +30,12 @@ Sample output of `sinfo` when some tasks are running
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 debug*       up   infinite      1    mix bld
 ```
+
+This command helps you to restart the node when a node is drained (underresourced or else).
+```
+sudo scontrol update nodename=bld state=idle
+```
+
 
 ## Submit, Cancel and Check status of a job
 
