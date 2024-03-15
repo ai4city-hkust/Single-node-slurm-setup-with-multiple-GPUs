@@ -40,3 +40,13 @@ sudo scontrol update nodename=bld state=idle
 ## Submit, Cancel and Check status of a job
 
 TODO: add these commands with options for GPU
+
+To test a simple job with GPU
+```
+sudo srun ./gpu_tester.sh
+```
+
+Check status of CPU, Mem, and GPU usage on a node
+```
+sinfo -o "%10c  %20m  %30G"
+```
