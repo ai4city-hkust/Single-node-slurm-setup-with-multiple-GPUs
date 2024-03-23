@@ -36,6 +36,10 @@ Run sbatch multiple times, you will see multiple GPUs in use.
 sbatch gpu_tester.sh
 ```
 
+To cancel a run, simply run `scancel {jobId}`
+
+There is plenty of guides to more slurm commands, eg,https://svante.mit.edu/use_slurm.html
+
 
 ## Troubleshooting commands
 These are useful when `sinfo` does not work or respond.
