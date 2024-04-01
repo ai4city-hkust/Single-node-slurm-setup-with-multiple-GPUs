@@ -1,6 +1,47 @@
-# A Quick Slurm Guide for Beginners
+# A Quick Guide for Beginners
 
-## Introduction
+## Prerequisite
+The AI4City lab has bought linux servers to be used in scientific research, mainly for the staff and PhD students. 
+
+### Step 1. Acquire ssh account and passcode from admin
+Ask admin to create an account for you.
+
+### Step 2. Ssh
+Ssh into the server by {your account}@10.120.17.95 and key in the initial password
+
+### Step 3. (Optional) Reset password
+Reset the password:
+```
+passwd {your account}
+```
+
+### Step 4. (Optional) Check status of the server
+```
+top
+nvidia-smi
+```
+
+### Step 5. GPU computing readiness
+The server has cuda drivers installed, but for DL work one needs to install one's own virtual environments with the appropriate packages (as some codes require specific versions of the cuda and other libraries). This is assumed to be common knowledge and expected to be done by the user (aided by his/her thesis supervisor). For beginners, it is advised to stick to the common and 'ready' solutions, e.g. pytorch stable releases.
+
+### Step 6. Move your work from your laptop to the server
+Use scp
+```
+scp your_account@10.120.17.95:home/{your account}/foobar.txt /some/local/directory
+```
+Or install and use syncthing on your laptop
+TODO: [install syncthing on server](https://github.com/ai4city-hkust/Single-node-slurm-setup-with-multiple-GPUs/issues/5)
+
+### Step 7. (Optional) Install git on your laptop
+Write your code on your local laptop, sync your work to the server and test quickly.
+
+### Step 8. Submit your work with Slurm
+See below.
+
+Account creation and maintenance:
+Juran, juranzhang at hkust-gz.edu.cn
+
+## Introduction to Slurm
 Slurm commands could be confusing at first. If you check [slurm documentation](https://slurm.schedmd.com/man_index.html) one could easily be overwhelmed as there are hundreds of commands + options. This guide goes through one of the key commands and options that most people would need to complete their daily tasks.
 
 
