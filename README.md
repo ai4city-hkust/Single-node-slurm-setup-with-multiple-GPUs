@@ -1,13 +1,20 @@
 # A Quick Guide for Beginners
 
-## Prerequisite
+## Setup your account and workspace
 The AI4City lab has bought linux servers to be used in scientific research, mainly for the staff and PhD students. 
 
 ### Step 1. Acquire ssh account and passcode from admin
 Ask admin to create an account for you.
 
+Account creation and maintenance:
+Juran, juranzhang at hkust-gz.edu.cn
+
 ### Step 2. Ssh
 Ssh into the server by {your account}@10.120.17.95 and key in the initial password
+```
+ssh {your account}@10.120.17.95
+```
+Key in the initial password that admin shared with you.
 
 ### Step 3. (Optional) Reset password
 Reset the password:
@@ -21,8 +28,8 @@ top
 nvidia-smi
 ```
 
-### Step 5. GPU computing readiness
-The server has cuda drivers installed, but for DL work one needs to install one's own virtual environments with the appropriate packages (as some codes require specific versions of the cuda and other libraries). This is assumed to be common knowledge and expected to be done by the user (aided by his/her thesis supervisor). For beginners, it is advised to stick to the common and 'ready' solutions, e.g. pytorch stable releases.
+### Step 5. (Optional) GPU computing readiness
+The server has cuda drivers installed, but for DL work you need to install your own virtual environments with the appropriate packages (as some codes require specific versions of the cuda and other libraries). This is assumed to be common knowledge and expected to be done by the user (aided by his/her thesis supervisor). For beginners, it is advised to stick to the common and 'ready' solutions, e.g. pytorch stable releases.
 
 ### Step 6. Move your work from your laptop to the server
 Use scp
@@ -33,19 +40,13 @@ Or install and use syncthing on your laptop
 TODO: [install syncthing on server](https://github.com/ai4city-hkust/Single-node-slurm-setup-with-multiple-GPUs/issues/5)
 
 ### Step 7. (Optional) Install git on your laptop
-Write your code on your local laptop, sync your work to the server and test quickly.
+This enables your to version your work and share with coworkers.
 
-### Step 8. Submit your work with Slurm
-See below.
+### Step 8. Run your code with Slurm
 
-Account creation and maintenance:
-Juran, juranzhang at hkust-gz.edu.cn
+Slurm commands could be confusing at first. If you check [slurm documentation](https://slurm.schedmd.com/man_index.html) you could easily be overwhelmed as there are hundreds of commands + options. We go through one of the key commands and options that most people would need to complete their daily tasks.
 
-## Introduction to Slurm
-Slurm commands could be confusing at first. If you check [slurm documentation](https://slurm.schedmd.com/man_index.html) one could easily be overwhelmed as there are hundreds of commands + options. This guide goes through one of the key commands and options that most people would need to complete their daily tasks.
-
-
-## Submit, Cancel and Check status of a job
+#### Submit, Cancel and Check status of a job
 
 In the repo, we've included a *simple_torch.py* script that does some simple GPU computing.
 Usually, we can run `python3 simple_torch.py` to do the job.
@@ -81,7 +82,7 @@ To cancel a run, simply run `scancel {jobId}`
 There is plenty of guides to more slurm commands, eg,https://svante.mit.edu/use_slurm.html
 
 
-## Troubleshooting commands
+#### Troubleshooting commands
 These are useful when `sinfo` does not work or respond.
 
 `sinfo -R` shows debug information.
