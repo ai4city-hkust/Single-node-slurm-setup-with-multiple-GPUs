@@ -16,6 +16,8 @@ ssh {your account}@10.120.17.95
 ```
 Key in the initial password that admin shared with you.
 
+Alternatively, you can access the server with gui interface. Simply install Microsoft Remote Desktop (Mac), or open Remote Desktop Connection (Windows), then setup the PC/Computer Name to be 10.120.17.95:3389 and key in your username and password.
+
 ### Step 3. (Optional) Reset password
 Reset the password:
 ```
