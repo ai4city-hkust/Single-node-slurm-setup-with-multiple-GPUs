@@ -10,6 +10,8 @@ Account creation and maintenance:
 Juran, juranzhang at hkust-gz.edu.cn
 
 ### Step 2. Ssh
+--- Make sure you are connected to Campus wifi or VPN ---
+
 Ssh into the server by {your account}@10.120.17.95 and key in the initial password
 ```
 ssh {your account}@10.120.17.95
