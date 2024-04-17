@@ -28,3 +28,14 @@ x.x.x.x is the ip address of your host
 ```
 x.x.x.x {hostname}
 ```
+
+### No space left on devices
+Do `df -h` and check for full partition. It could be due to improper partitioning.
+Do the following fixed the issue.
+```
+sudo lvm
+lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+exit
+sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
+```
+[reference](https://askubuntu.com/questions/1106795/ubuntu-server-18-04-lvm-out-of-space-with-improper-default-partitioning)
